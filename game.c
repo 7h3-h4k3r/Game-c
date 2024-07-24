@@ -10,9 +10,6 @@
 
 
 int main(){
-    if(input() == 1){
-        printf("Name has been stored {%s}",player.name);
-    }
     if(check_uid_is_live() == -1){
         new_register();
     }
