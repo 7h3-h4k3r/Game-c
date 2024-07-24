@@ -6,6 +6,8 @@ struct  User
 {
     char name[100];
     int uid;
+    int highscore;
+    int credit;
 };
 //global variable
 struct User player;
@@ -30,6 +32,25 @@ int check_uid_is_live(){
         player= entry;
     }
     return 1;
+}
+
+void new_register(){
+    int fd;
+    printf("==========NEW REGISTATION (GAME CLUB)==========");
+    printf("Enter a player name:\n");
+    input();
+    player.uid = getuid();
+    player.highscore = player.credit = 100;
+    fd = open(DATAFILE,O_APPEND|O_WRONLY|O_CREAT , S_IRUSR|S_IWUSR);
+    if(fd == -1){
+        error("while open a new register file\n");
+    }
+    if(write(fd,&player,sizeof(struct User))==-1)
+        error("While write tha file \n");
+    close(fd);
+    printf("heyyy buddy welcome the gaming club");//make yours
+    printf("player name %s\n",player.name);
+    printf("player credit %d\n",player.credit);
 }
 int input(){
     char *name_ptr , input_char;
