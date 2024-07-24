@@ -2,6 +2,7 @@
 #define USER_DETAILS_H
 #define DATAFILE "user/info.data"
 #include "error.h"
+int input();
 struct  User
 {
     char name[100];
@@ -18,6 +19,7 @@ int check_uid_is_live(){
     fd = open(DATAFILE,O_RDONLY);
     if(fd == -1){
         error("cannot open the file");
+        return  -1;
     }
     read_byte = read(fd,&entry,sizeof(struct User ));
     while (entry.uid != uid && read_byte >0)
@@ -48,7 +50,7 @@ void new_register(){
     if(write(fd,&player,sizeof(struct User))==-1)
         error("While write tha file \n");
     close(fd);
-    printf("heyyy buddy welcome the gaming club");//make yours
+    printf("heyyy buddy welcome the gaming club\n");//make yours
     printf("player name %s\n",player.name);
     printf("player credit %d\n",player.credit);
 }
