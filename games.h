@@ -11,16 +11,18 @@ void jackpot(){
 }
 int pick_a_correct_number(){
     int winnner_no,user_no;
-    printf("-----------GUESS THE COREECT NUMBER -----------\n");
+    srand(time(0))
+    printf("\n-----------GUESS THE COREECT NUMBER -----------\n");
     printf("\t Each Guess you spend a 10(credit)\n");
     printf("\t you will win the match (you get a 100 credit) *jakpot* \n");
     printf("one and only hind is num start 1 end with 20 (1-20)");
     winnner_no = rand()%20 +1;
     if(player.credit<10){
-        printf("your credit is very low &d update your profile\n",player.credit);
+        printf("your credit is very low %d update your profile\n",player.credit);
     }
     printf("enter your choice : ");
     scanf("%d",&user_no);
+    printf("Rand number is %d\n",winnner_no);
     if(winnner_no == user_no){
         jackpot();
     }
