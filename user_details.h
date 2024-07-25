@@ -38,7 +38,7 @@ int check_uid_is_live(){
 
 void new_register(){
     int fd;
-    printf("==========NEW REGISTATION (GAME CLUB)==========");
+    printf("==========NEW REGISTATION (GAME CLUB)==========\n");
     printf("Enter a player name:\n");
     input();
     player.uid = getuid();
