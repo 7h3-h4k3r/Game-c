@@ -137,7 +137,7 @@ int no_match_dealer(){
         }
     }
     if(match ==- 1){
-        printf("There were no Match the number %d !\n");
+        printf("There were no Match the number %d !\n",match);
         player.credit +=wager;
     }else{
         printf("The dealer matched the number %d ",match);
