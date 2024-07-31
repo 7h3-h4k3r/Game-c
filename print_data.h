@@ -5,7 +5,7 @@
 //     printf("Written by");
 // }
 void banner_two(){
-    printf("1.Pick  a correct Number\n2. No Match dealer \n3. Find Ace Game \n4.Show high score \n5.change you name \t 6.Exit the game\n");
+    printf("1.Pick  a correct Number\n2. No Match dealer \n3. Find Ace Game \n4.Show high score \n5.change you name \n 6.Exit the game\n");
     
 }
 void banner_one(){
