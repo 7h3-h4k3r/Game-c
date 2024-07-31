@@ -54,7 +54,7 @@ int check_uid_is_live(){
     }else{
         player= entry;
     }
-    return -1;
+    return 1;
 }
 
 void new_register(){

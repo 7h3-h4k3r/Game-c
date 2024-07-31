@@ -10,8 +10,8 @@
 #include "print_data.h"
 
 int main(int argc ,char *argv[]){
-     int choice;
-    if(check_uid_is_live == -1){
+    int choice;
+    if(check_uid_is_live() == -1){
         new_register();
     }
     banner_one();
