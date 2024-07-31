@@ -17,7 +17,8 @@ int main(int argc ,char *argv[]){
     banner_one();
     banner_two();
     printf("Enter your choice \n");
-    switch (scanf("%d",&choice))
+    scanf("%d",&choice)
+    switch (choice)
     {
     case 1:
         pick_a_correct_number();
