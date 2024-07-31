@@ -2,6 +2,7 @@
 #define USER_DETAILS_H
 #define DATAFILE "user/info.data"
 #include "error.h"
+#include "print_data.h"
 int input();
 struct  User
 {
@@ -12,7 +13,26 @@ struct  User
 };
 //global variable
 struct User player;
-
+void high_score(){
+    unsigned int top_score = 100;
+    struct User entry;
+    int fd;
+    fd =  open(DATAFILE,O_RDONLY);
+    if(fd == -1){
+        error("While can't opening the file");
+        exit(-1);
+    }
+    while(read(fd,&entry,sizeof(struct User))){
+            if(entry.highscore>top_score){
+                top_score = entry.highscore;
+                high_score_banner(top_score);
+            }
+            else{
+                printf("You hava a current score in Game \n Name of the gamer: %s",entry.name);
+                pruntf("\nLast score :%d",entry.highscore);
+            }
+    }
+}
 int check_uid_is_live(){
     int fd,uid,read_byte;
     struct User entry;
