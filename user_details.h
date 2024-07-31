@@ -29,7 +29,7 @@ void high_score(){
             }
             else{
                 printf("You hava a current score in Game \n Name of the gamer: %s",entry.name);
-                pruntf("\nLast score :%d",entry.highscore);
+                printf("\nLast score :%d",entry.highscore);
             }
     }
 }
@@ -54,7 +54,7 @@ int check_uid_is_live(){
     }else{
         player= entry;
     }
-    return 1;
+    return -1;
 }
 
 void new_register(){
